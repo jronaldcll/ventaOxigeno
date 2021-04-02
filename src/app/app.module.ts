@@ -6,17 +6,33 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProviderComponent } from './pages/provider/provider.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ReserveComponent } from './pages/reserve/reserve.component';
+
+import { ListProviderComponent } from './pages/list-provider/list-provider.component';
+import { ListReserveComponent } from './pages/list-reserve/list-reserve.component';
+
+import { ReactiveFormsModule} from '@angular/forms';
+import { ReservedComponent } from './pages/reserved/reserved.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    ProviderComponent,
+    RegisterComponent,
+    ReserveComponent,
+    ReservedComponent,
+    ListProviderComponent,
+    ListReserveComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

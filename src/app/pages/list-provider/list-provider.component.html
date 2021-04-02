@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 p-4 text-left">    
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Seleccione Distrito
+                </a>          
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="height: auto; max-height: 200px; overflow-x: hidden;">
+                     <a class="dropdown-item" href="#">Ancón</a>
+                     <a class="dropdown-item" href="#">Ate</a>
+                     <a class="dropdown-item" href="#">Barranco</a>
+                     <a class="dropdown-item" href="#">Breña</a>
+                     <a class="dropdown-item" href="#">Carabayllo</a>
+                     <a class="dropdown-item" href="#">Chaclacayo</a>
+                     <a class="dropdown-item" href="#">Chorrillos</a>
+                     <a class="dropdown-item" href="#">Cieneguilla</a>
+                     <a class="dropdown-item" href="#">Comas</a>
+                     <a class="dropdown-item" href="#">El agustino</a>
+                     <a class="dropdown-item" href="#">Independencia</a>
+                     <a class="dropdown-item" href="#">Jesús maría</a>
+                     <a class="dropdown-item" href="#">La molina</a>
+                     <a class="dropdown-item" href="#">La victoria</a>
+                     <a class="dropdown-item" href="#">Lima</a>
+                     <a class="dropdown-item" href="#">Lince</a>
+                     <a class="dropdown-item" href="#">Los olivos</a>
+                     <a class="dropdown-item" href="#">Chosica</a>
+                     <a class="dropdown-item" href="#">Lurín</a>
+                     <a class="dropdown-item" href="#">Magdalena del mar</a>
+                     <a class="dropdown-item" href="#">Miraflores</a>
+                     <a class="dropdown-item" href="#">Pachacámac</a>
+                     <a class="dropdown-item" href="#">Pucusana</a>
+                     <a class="dropdown-item" href="#">Pueblo libre</a>
+                     <a class="dropdown-item" href="#">Puente piedra</a>
+                     <a class="dropdown-item" href="#">Punta hermosa</a>
+                     <a class="dropdown-item" href="#">Punta negra</a>
+                     <a class="dropdown-item" href="#">Rímac</a>
+                     <a class="dropdown-item" href="#">San bartolo</a>
+                     <a class="dropdown-item" href="#">San borja</a>
+                     <a class="dropdown-item" href="#">San isidro</a>
+                     <a class="dropdown-item" href="#">San Juan de Lurigancho</a>
+                     <a class="dropdown-item" href="#">San Juan de Miraflores</a>
+                     <a class="dropdown-item" href="#">San Luis</a>
+                     <a class="dropdown-item" href="#">San Martin de Porres</a>
+                     <a class="dropdown-item" href="#">San Miguel</a>
+                     <a class="dropdown-item" href="#">Santa Anita</a>
+                     <a class="dropdown-item" href="#">Santa María del Mar</a>
+                     <a class="dropdown-item" href="#">Santa Rosa</a>
+                     <a class="dropdown-item" href="#">Santiago de Surco</a>
+                     <a class="dropdown-item" href="#">Surquillo</a>
+                     <a class="dropdown-item" href="#">Villa el Salvador</a>
+                     <a class="dropdown-item" href="#">Villa Maria del Triunfo</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row roboto">             
+        <div class="col-lg-6" *ngFor="let item of [1,2,3,4,5,6,7,8]; index as i;" >
+            <div class="card mb-2 shadow-p" style="width: 100%;" [routerLink]="['/provider']">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3  text-center">
+                            <img src="/assets/img/ico-empresa.png" class="img-thumbnail" >
+                            <br><br>
+                        </div>                       
+                            <div class="col-sm-9" >
+                                <h5 class="card-title">Empresa Salvame</h5>
+                                <p class="card-text">Abierto</p>
+                                <p class="card-text">3 km. Disponible 
+                                    <img src="/assets/img/large-green-circle.png" style="height: 20px; width: 20px;">
+                                </p>                                                                                              
+                                <div class="card-img-overlay text-right ">
+                                    <img src="/assets/img/ico-empresa.png"  class="img-thumbnail" style="height: 40px; width: 40px;" >                                   
+                                    <br><br>
+                                    <p class="card-text">S/ 18.00</p>                    
+                                </div>     
+                        </div>                    
+                    </div>
+                </div>                             
+            </div>              
+        </div> 
+    </div>
+</div>

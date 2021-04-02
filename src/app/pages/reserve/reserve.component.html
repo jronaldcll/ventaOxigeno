@@ -1,0 +1,64 @@
+<div class="row">  
+    <div class="col-md-12">
+        <nav class="nav shadow-p p-2 mb-2">
+            <h5 class="roboto">
+                Oxigeno Perú S.A.C.
+            </h5>
+        </nav>
+    </div>
+    <div class="col-md-12">
+    </div>
+    <div class="col-md-4" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
+        <div class="card mb-2 shadow-p" style="width: 100%;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="roboto">Balón de Oxigeno 10m3</h6>
+                    </div>
+                    <div class="col-3">
+                        <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg)" src="/assets/img/cuadro.png" alt="">
+                    </div>
+                    <div class="col-9">
+                        <table class="roboto" style="width: 100%;font-size: 80%;">
+                            <tbody>
+                                <tr>
+                                    <th>Cantidad:</th>
+                                    <th>Precio Unitario:</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <form formGroup="pedidoForm">
+                                            <input min="0" style="max-width: 60px;" 
+                                                type="number" class="form-group"
+                                                formControlName="cantidad"
+                                            >
+                                        </form>
+                                    </td>
+                                    <td class="text-right">S/. {{pedido.precio}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <th>Precio Total</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-right">S/. {{pedido.total()}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--<pre>
+                            {{pedido | json}}
+                        </pre>-->
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-light shadow-p font-weight-normal roboto">Reservar</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <pre>
+        {{pedidoForm.value | json}}
+    </pre>
+</div>
