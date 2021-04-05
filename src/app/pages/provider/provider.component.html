@@ -1,0 +1,37 @@
+<img class="banner"  src="/assets/img/rectangulo2.png">
+<div class="card mb-2 roboto shadow-p" style="width: 100%;">
+    <div class="card-body">
+        <h3 class="roboto">Oxigeno Perú SAC</h3>
+        <ul class="list-provider">
+            <li><strong>Direccion</strong> Av Brasil 1500 Jessu María</li>
+            <li><strong>Distancia</strong> 5 Km</li>
+            <li><strong>Horario de atención</strong> 9am - 6pm</li>
+            <li>
+                <strong>Forma de Pago</strong>&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;<i class="fa fa-money" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row roboto">
+    <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
+        <div class="card mb-2 shadow-p" style="width: 100%;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg)" src="/assets/img/cuadro.png" alt="">
+                    </div>
+                    <div class="col-9">
+                        <ul class="list-provider">
+                            <li><strong>Stock</strong> 20</li>
+                            <li><strong>Precio</strong> S/. 2500</li>
+                            <li>
+                                <br>
+                            </li>
+                            <button type="button" class="btn btn-light shadow-p font-weight-normal roboto">Reservar</button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
