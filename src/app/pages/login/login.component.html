@@ -32,10 +32,11 @@
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="***********">
                   </div>
-                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Ingresar">
+                  <!-- <input routerlink="/listProvider" name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Ingresar"> -->
+                  <button routerlink="/listProvider" class="btn btn-block login-btn mb-4">Ingresar</button>
                 </form>
                 <a href="#!" class="forgot-password-link">¿Olvido su contraseña?</a>
-                <p class="login-card-footer-text">¿No tienes una cuenta? <a routerLink="registerUser" class="text-reset">Registrate aqui</a></p>
+                <p class="login-card-footer-text">¿No tienes una cuenta? <a routerLink="/register" class="text-reset">Registrate aqui</a></p>
                 <nav class="login-card-footer-nav">
                   <a href="#!">Terminos y condiciones</a>
                   <a href="#!">Politicas de privacidad</a>

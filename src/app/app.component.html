@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<section style="min-height:600;">
-  <router-outlet></router-outlet>
-</section>
-
-=======
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" style="opacity: 1;background-color: rgba(2, 2, 2, 0.75); border-bottom-right-radius: 10px; border-bottom-left-radius: 10px">
   <div class="container">        
     <div class="d-flex flex-column w-100">        
@@ -15,7 +9,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto text-uppercase">
                 <li class="nav-item" role="presentation">
-                <a class="nav-link active js-scroll-trigger" routerLink="login" style="color: rgb(255, 255, 255);">Inicio</a></li>
+                <a class="nav-link active js-scroll-trigger" routerLink="listProvider" style="color: rgb(255, 255, 255);">Inicio</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="listProvider" style="color: rgb(255, 255, 255);">Productos</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="reserved" style="color: rgb(255, 255, 255);">Ver Reservas</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="login" style="color: rgb(255, 255, 255);">Iniciar Sesion</a></li>
@@ -25,9 +19,12 @@
           </div>
         </div>
         <div class="d-flex align-items-start">        
-          <a class="navbar-brand js-scroll-trigger" routerLink="home" style="color: rgb(255, 255, 255);">MI EMPRESA</a>                  
-          <i class="fa fa-shopping-cart pl-2 pt-2" aria-hidden="true"></i>
-          <i class="fa fa-address-book pl-3 pt-2" aria-hidden="true"></i>      
+          <a class="navbar-brand js-scroll-trigger" routerLink="home" style="color: rgb(255, 255, 255);">MI EMPRESA</a>      
+          <a class="navbar-brand js-scroll-trigger" routerLink="/login" style="color: rgb(255, 255, 255);">ACCEDER</a>      
+                      
+          <!-- <i class="fa fa-shopping-cart pl-2 pt-2" aria-hidden="true"></i> -->
+          <!-- <li class="nav-item"><i class="nav-link fa-address-book pl-3 pt-2" aria-hidden="true" routerlink="/login" ></i></li> -->
+                
         </div>
       </div>
     </div>  
@@ -36,7 +33,3 @@
 <div class="container" style="min-height: 600px; padding: 60px 0;">
   <router-outlet></router-outlet>
 </div> 
-<!--<section style="min-height: 600px; padding: 60px 0;">
-  <router-outlet></router-outlet>
-</section>-->
->>>>>>> de61d4d28da2abbbdef49f1a3cf2bf68c753a079

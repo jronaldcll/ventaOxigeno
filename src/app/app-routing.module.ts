@@ -16,10 +16,10 @@ import { RegisterProviderComponent } from './pages/register-provider/register-pr
 
 
 const routes: Routes=[
-    { path: 'home', component: HomeComponent },
+    // { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'registerUser', component: RegisterUserComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'listProvider', pathMatch: 'full' },
     { path: 'provider', component: ProviderComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'reserve', component: ReserveComponent },
