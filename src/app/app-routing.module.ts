@@ -10,6 +10,9 @@ import { ReservedComponent } from './pages/reserved/reserved.component';
 
 import { ListProviderComponent } from  './pages/list-provider/list-provider.component';
 import { ListReserveComponent } from  './pages/list-reserve/list-reserve.component';
+import { HomeProviderComponent } from './pages/home-provider/home-provider.component';
+import { EditProviderComponent } from './pages/edit-provider/edit-provider.component';
+import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
 
 
 const routes: Routes=[
@@ -23,6 +26,9 @@ const routes: Routes=[
     { path: 'reserved', component: ReservedComponent},
     { path: 'listProvider', component: ListProviderComponent },
     { path: 'listReserve', component: ListReserveComponent },
+    { path: 'homeprovider', component: HomeProviderComponent },
+    { path: 'editprovider', component: EditProviderComponent },
+    { path: 'registerprovider', component: RegisterProviderComponent },
 ];
 
 

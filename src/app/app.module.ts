@@ -15,6 +15,9 @@ import { ListReserveComponent } from './pages/list-reserve/list-reserve.componen
 
 import { ReactiveFormsModule} from '@angular/forms';
 import { ReservedComponent } from './pages/reserved/reserved.component';
+import { HomeProviderComponent } from './pages/home-provider/home-provider.component';
+import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
+import { EditProviderComponent } from './pages/edit-provider/edit-provider.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ReservedComponent } from './pages/reserved/reserved.component';
     ReserveComponent,
     ReservedComponent,
     ListProviderComponent,
-    ListReserveComponent
+    ListReserveComponent,
+    HomeProviderComponent,
+    RegisterProviderComponent,
+    EditProviderComponent
   ],
   imports: [
     BrowserModule,
