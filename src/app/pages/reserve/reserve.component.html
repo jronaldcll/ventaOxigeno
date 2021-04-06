@@ -1,12 +1,58 @@
 <div class="row">  
     <div class="col-md-12">
-        <nav class="nav shadow-p p-2 mb-2">
-            <h5 class="roboto">
+        <nav class="nav shadow-p p-2 mb-2 white cyan lighten-2">
+            <h5 class="roboto white-text">
                 Oxigeno Perú S.A.C.
             </h5>
         </nav>
     </div>
     <div class="col-md-12">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="roboto">Balón de Oxigeno 10m3</h5>
+                <br>
+            </div>
+            <div class="col-4"  style="text-align: center;">
+                <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg);mix-blend-mode: darken;" src="/assets/img/cuadro.png" alt="">
+            </div>
+            <div class="col-4">
+                <table class="roboto" style="width: 100%;font-size: 80%;">
+                    <tbody>
+                        <tr>
+                            <th style="text-align: left;">Cantidad:</th>
+                            <th style="text-align: right;">Precio Unitario:</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">
+                                <form [formGroup]="pedidoForm">
+                                    <input min="0" style="max-width: 60px;" 
+                                        type="number" class="form-control"
+                                        formControlName="cantidad" 
+                                    >
+                                </form>
+                            </td>
+                            <td class="text-right">S/. {{pedidoForm.value.precio}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <th style="text-align: right;font-size:200%;">Precio Total</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="text-right roboto"  style="font-weight: 600;font-size:200%;">S/. {{multiply(pedidoForm.value.precio,pedidoForm.value.cantidad) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4 text-center">
+                <br>
+                <button routerLink="/reserved" type="button" class="btn btn-light shadow-p font-weight-normal roboto cyan lighten-2 white-text">Reservar</button>
+            </div> 
+        </div>
+    </div>
+    <div class="col-md-12">
+        <br><br><br>
+        <h6 class="roboto">Otros Productos</h6>
     </div>
     <div class="col-md-4" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
         <div class="card mb-2 shadow-p" style="width: 100%;">
@@ -27,14 +73,14 @@
                                 </tr>
                                 <tr>
                                     <td class="text-center">
-                                        <form formGroup="pedidoForm">
+                                        <form>
                                             <input min="0" style="max-width: 60px;" 
                                                 type="number" class="form-group"
-                                                formControlName="cantidad"
+                                                value="1"
                                             >
                                         </form>
                                     </td>
-                                    <td class="text-right">S/. {{pedido.precio}}</td>
+                                    <td class="text-right">S/. 2500.00</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -42,7 +88,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td class="text-right">S/. {{pedido.total()}}</td>
+                                    <td class="text-right">S/. 2500</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -58,7 +104,4 @@
             </div>
         </div>
     </div>
-    <pre>
-        {{pedidoForm.value | json}}
-    </pre>
 </div>

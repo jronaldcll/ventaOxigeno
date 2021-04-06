@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-provider',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProviderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private r:Router) { }
 
   ngOnInit(): void {
+  }
+
+  reserve(){
+    if(sessionStorage.getItem('user')){
+      this.r.navigate(['/reserve']);
+    } else {
+      this.r.navigate(['/login']);
+    }
+    
   }
 
 }

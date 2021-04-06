@@ -9,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
 export class ReserveComponent implements OnInit {
 
     pedidoForm = this.fb.group({
-        cantidad: [10],
+        cantidad: [1],
         precio: [2500]
     });
 
@@ -26,6 +26,10 @@ export class ReserveComponent implements OnInit {
     }
 
     constructor( private fb: FormBuilder) { }
+
+    multiply(a,b){
+        return parseFloat(a)*parseFloat(b);
+    }
 
     ngOnInit(): void {
     }
