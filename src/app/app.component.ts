@@ -16,13 +16,22 @@ export class AppComponent {
             if(this.correo == 'admin@mail.com'){
                 this.user = 'admin';
             } else {
-                this.user = 'Usuario';
+                if(this.correo == 'factory@mail.com'){
+                    this.user = 'factory';
+                } else {
+                    this.user = 'Usuario';
+                }
+                
             }
         }
     }
 
     isAdmin(){
         return this.user == 'admin' ? true : false;
+    }
+
+    isProvider(){
+        return this.user == 'factory' ? true : false;
     }
 
     isOnline(){

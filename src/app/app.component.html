@@ -15,7 +15,8 @@
                 <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="reserved" style="color: rgb(255, 255, 255);">Ver Reservas</a></li>
                 <!--<li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="login" style="color: rgb(255, 255, 255);">Iniciar Sesion</a></li>-->
                 <!--<li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="register" style="color: rgb(255, 255, 255);">Crear Cuenta</a></li>-->
-                <li *ngIf="isAdmin()" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="homeprovider" style="color: rgb(255, 255, 255);">Proveedores</a></li>          
+                <li *ngIf="isAdmin()" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="homeprovider" style="color: rgb(255, 255, 255);">Proveedores</a></li>
+                <li *ngIf="isProvider()" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="listReserve" style="color: rgb(255, 255, 255);">Pedidos</a></li>          
             </ul>
           </div>
         </div>
