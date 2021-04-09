@@ -1,15 +1,15 @@
 <div class="container">
   <br><br>
     <div>
-        <form>
+        <form (submit)="onSetDatos($event)" [formGroup]="datosForm">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputEmail4">Ruc</label>
-                    <input type="email" class="form-control" id="inputEmail4" >
+                    <input type="number" min="11" max="11" class="form-control" id="inputEmail4" formControlName="ruc" >
                 </div>
                 <div class="form-group col-md-8">
                     <label for="inputPassword4">Nombre de la Empresa</label>
-                    <input type="password" class="form-control" id="inputPassword4" >
+                    <input type="text" class="form-control" id="inputPassword4" formControlName="nombreempresa" >
                 </div>
              </div>
             <div class="form-row"> 
@@ -64,32 +64,32 @@
                   </div>           
                 <div class="form-group col-md-4">
                     <label for="inputEmail4">Dirección</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Dirección">
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Dirección" formControlName="direccion">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputPassword4">Email</label>
-                    <input type="Email" class="form-control" id="inputPassword4" placeholder="Email">
+                    <input type="Email" class="form-control" id="inputPassword4" placeholder="example@dominio.com" formControlName="email">
                 </div>               
             </div> 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Nombre del Representante</label>
-                    <input type="email" class="form-control" id="inputEmail4" >
+                    <input type="text" class="form-control" id="inputEmail4" formControlName="nombrerepresentante" >
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Apellidos</label>
-                    <input type="password" class="form-control" id="inputPassword4" >
+                    <input type="text" class="form-control" id="inputPassword4" formControlName="apellidos" >
                 </div>
              </div>           
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="estado">
                 <label class="form-check-label" for="gridCheck">
                   Activo
                 </label>
               </div>
             </div>
-            <button routerLink="/homeprovider" class="btn btn-primary">Guardar</button>
+            <button  class="btn btn-info">Guardar</button>
           </form>
     </div>
  
