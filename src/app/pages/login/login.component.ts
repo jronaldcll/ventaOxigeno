@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
             this.setData(this.datosForm.value.correo);
             console.log(this.datosForm.value);
         } else {
-            alert('Formulario no válido');
+            alert('Correo no valido o datos incompletos');
         }
     }
 
