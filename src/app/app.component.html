@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="d-flex align-items-start">        
-          <a class="navbar-brand js-scroll-trigger" routerLink="home" style="color: rgb(255, 255, 255);">MI EMPRESA</a>      
+          <a class="navbar-brand js-scroll-trigger black-text" routerLink="home">OXI OK</a>      
           <a *ngIf="!isOnline()" class="navbar-brand js-scroll-trigger" routerLink="/login" style="color: rgb(255, 255, 255);">ACCEDER</a> 
           <a *ngIf="!isOnline()" class="navbar-brand js-scroll-trigger" routerLink="/register" style="color: rgb(255, 255, 255);">CREAR CUENTA</a>  
           <a *ngIf="isOnline()" (click)="logout()" class="navbar-brand js-scroll-trigger" routerLink="/login"  style="color: rgb(255, 255, 255);">SALIR</a>      
