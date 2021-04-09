@@ -18,6 +18,7 @@ import { ReservedComponent } from './pages/reserved/reserved.component';
 import { HomeProviderComponent } from './pages/home-provider/home-provider.component';
 import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
 import { EditProviderComponent } from './pages/edit-provider/edit-provider.component';
+import { DataTablesModule } from 'angular-datatables'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EditProviderComponent } from './pages/edit-provider/edit-provider.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
