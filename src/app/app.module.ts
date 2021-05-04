@@ -18,7 +18,9 @@ import { ReservedComponent } from './pages/reserved/reserved.component';
 import { HomeProviderComponent } from './pages/home-provider/home-provider.component';
 import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
 import { EditProviderComponent } from './pages/edit-provider/edit-provider.component';
-import { DataTablesModule } from 'angular-datatables'
+import { DataTablesModule } from 'angular-datatables';
+import { LandingComponent } from './pages/landing/landing.component';
+import { TosComponent } from './pages/tos/tos.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DataTablesModule } from 'angular-datatables'
     ListReserveComponent,
     HomeProviderComponent,
     RegisterProviderComponent,
-    EditProviderComponent
+    EditProviderComponent,
+    LandingComponent,
+    TosComponent
   ],
   imports: [
     BrowserModule,

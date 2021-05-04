@@ -13,13 +13,15 @@ import { ListReserveComponent } from  './pages/list-reserve/list-reserve.compone
 import { HomeProviderComponent } from './pages/home-provider/home-provider.component';
 import { EditProviderComponent } from './pages/edit-provider/edit-provider.component';
 import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { TosComponent } from './pages/tos/tos.component';
 
 
 const routes: Routes=[
     // { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'registerUser', component: RegisterUserComponent },
-    { path: '', redirectTo: 'listProvider', pathMatch: 'full' },
+    //{ path: '', redirectTo: 'listProvider', pathMatch: 'full' },
     { path: 'provider', component: ProviderComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'reserve', component: ReserveComponent },
@@ -29,6 +31,8 @@ const routes: Routes=[
     { path: 'homeprovider', component: HomeProviderComponent },
     { path: 'editprovider', component: EditProviderComponent },
     { path: 'registerprovider', component: RegisterProviderComponent },
+    { path: '', component: LandingComponent},
+    { path: 'tos', component: TosComponent}
 ];
 
 
