@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ProductService } from 'src/app/service/product.service';
+import { ProviderService } from 'src/app/service/provider.service';
 
 @Component({
   selector: 'app-provider',
@@ -8,18 +10,55 @@ import { Router } from '@angular/router';
 })
 export class ProviderComponent implements OnInit {
 
-  constructor(private r:Router) { }
+    constructor(private r:Router,
+                private activeRoute: ActivatedRoute, 
+                private serviceProvider: ProviderService,
+                private serviceProduct: ProductService) { }
 
-  ngOnInit(): void {
-  }
-
-  reserve(){
-    if(sessionStorage.getItem('user')){
-      this.r.navigate(['/reserve']);
-    } else {
-      this.r.navigate(['/login']);
+    provider = {
+        name: '',
+        address: '',
+        image: '',
+        hourStart: '',
+        hourEnd: '',
+        email: ''
     }
-    
-  }
+
+    products = [];
+
+    ngOnInit(): void {
+        this.activeRoute.params.subscribe((params : Params) =>{
+            if(params.id){
+                let salida = this.serviceProvider.searchById(params.id).subscribe((rest: any) =>{
+                    if(rest.isSuccess){
+                        this.provider = rest.data;
+                        this.traerProductos(params.id);
+                    } else {
+                        this.r.navigate(['/']);
+                    }
+                    console.log(rest); 
+                });
+            } else {
+                this.r.navigate(['/']);
+            }
+        });
+    }
+
+    traerProductos(id){
+        let salida = this.serviceProduct.searchByProviderId(id).subscribe((rest: any) =>{
+            if(rest.isSuccess){
+                this.products = rest.data;
+            }
+            console.log(rest); 
+        });
+    }
+
+    reserve(){
+        if(sessionStorage.getItem('user')){
+            this.r.navigate(['/reserve']);
+        } else {
+            this.r.navigate(['/login']);
+        }
+    }
 
 }

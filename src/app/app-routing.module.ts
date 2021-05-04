@@ -22,6 +22,7 @@ const routes: Routes=[
     { path: 'login', component: LoginComponent },
     { path: 'registerUser', component: RegisterUserComponent },
     //{ path: '', redirectTo: 'listProvider', pathMatch: 'full' },
+    { path: 'provider/:id', component: ProviderComponent},
     { path: 'provider', component: ProviderComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'reserve', component: ReserveComponent },

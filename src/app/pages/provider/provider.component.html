@@ -1,29 +1,29 @@
-<img class="banner"  src="/assets/img/rectangulo2.png">
+<img class="banner"  src="/assets/img/rectangulo2.png" style="background-image: url({{provider.image}});">
 <div class="card mb-2 roboto shadow-p" style="width: 100%;">
     <div class="card-body">
-        <h3 class="roboto">Oxigeno Perú SAC</h3>
+        <h3 class="roboto">{{provider.name}}</h3>
         <ul class="list-provider">
-            <li><strong>Direccion</strong> Av Brasil 1500 Jessu María</li>
+            <li><strong>Direccion</strong> {{provider.address}}</li>
             <li><strong>Distancia</strong> 5 Km</li>
-            <li><strong>Horario de atención</strong> 9am - 6pm</li>
+            <li><strong>Horario de atención</strong> {{provider.hourStart}}:00 - {{provider.hourEnd}}:00</li>
             <li>
-                <strong>Forma de Pago</strong>&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;<i class="fa fa-money" aria-hidden="true"></i>
+                <strong>Correo</strong>&nbsp;<!--<i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;<i class="fa fa-money" aria-hidden="true"></i>-->{{provider.email}}
             </li>
         </ul>
     </div>
 </div>
 <div class="row roboto">
-    <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
+    <div class="col-lg-4 col-md-6" *ngFor="let item of products; index as i;">
         <div class="card mb-2 shadow-p" style="width: 100%;">
             <div class="card-body">
                 <div class="row">
                     <div class="col-3">
-                        <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg)" src="/assets/img/cuadro.png" alt="">
+                        <img class="placeholder-image" style="background-image:url({{item.image}})" src="/assets/img/cuadro.png" alt="">
                     </div>
                     <div class="col-9">
                         <ul class="list-provider">
-                            <li><strong>Stock</strong> 20</li>
-                            <li><strong>Precio</strong> S/. 2500</li>
+                            <li><strong>{{item.name}}</strong></li>
+                            <li><strong>Precio</strong> S/. {{item.price}}</li>
                             <li>
                                 <br>
                             </li>
@@ -33,5 +33,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div *ngIf="products.length < 1">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Uppss!</strong> El proveedor {{provider.name}} aun no tiene productos para mostrar.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 </div>
