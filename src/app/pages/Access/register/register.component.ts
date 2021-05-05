@@ -48,7 +48,9 @@ export class RegisterComponent implements OnInit {
                     $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Uppss!</strong> El correo ingresado ya está en uso.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
                 }
                 this.isLoading = false;
-                
+            },(error)=>{
+                this.isLoading = false;
+                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Uppss!</strong> "+error.message+" <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
             });
         } else {
             alert('Formulario no válido');

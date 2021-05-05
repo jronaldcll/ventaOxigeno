@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ProductService } from 'src/app/service/product.service';
+import { ProviderService } from 'src/app/service/provider.service';
 
 @Component({
   selector: 'app-reserve',
@@ -25,13 +28,72 @@ export class ReserveComponent implements OnInit {
         }
     }
 
-    constructor( private fb: FormBuilder) { }
+
+    provider = {
+        name: '',
+        address: '',
+        image: '',
+        hourStart: '',
+        hourEnd: '',
+        email: ''
+    }
+
+    products = [];
+    product = {
+        id: 0,
+        name: '',
+        image: '',
+        price: 0,
+        providerId: 0,
+    }
+
+    constructor( private fb: FormBuilder,
+                private r:Router,
+                private activeRoute: ActivatedRoute,
+                private serviceProvider: ProviderService,
+                private serviceProduct: ProductService ) { }
 
     multiply(a,b){
         return parseFloat(a)*parseFloat(b);
     }
 
     ngOnInit(): void {
+        this.activeRoute.params.subscribe((params : Params) =>{
+            if(params.provider){
+                let salida = this.serviceProvider.searchById(params.provider).subscribe((rest: any) =>{
+                    if(rest.isSuccess){
+                        this.provider = rest.data;
+                        this.traerProductos(params.provider,params.product);
+                    } else {
+                        this.r.navigate(['/']);
+                    }
+                });
+            } else {
+                this.r.navigate(['/']);
+            }
+        });
+    }
+
+    traerProductos(id,idP){
+        let salida = this.serviceProduct.searchByProviderId(id).subscribe((rest: any) =>{
+            if(rest.isSuccess){
+                let salida = rest.data;
+                this.products = [];
+                salida.forEach(p =>{
+                    if(p.id == idP ){
+                        this.product = p;
+                    } else {
+                        this.products.push(p);
+                    }
+                });
+                
+            } 
+        });
+    }
+
+
+    reserve(product){
+        this.r.navigate(['/reserve/'+product.providerId+'/'+product.id]);
     }
 
 }

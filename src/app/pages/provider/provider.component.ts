@@ -53,12 +53,13 @@ export class ProviderComponent implements OnInit {
         });
     }
 
-    reserve(){
+    reserve(product){
         if(sessionStorage.getItem('user')){
-            this.r.navigate(['/reserve']);
+            this.r.navigate(['/reserve/'+product.providerId+'/'+product.id]);
         } else {
             this.r.navigate(['/login']);
         }
     }
+
 
 }

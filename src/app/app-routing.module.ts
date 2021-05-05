@@ -25,6 +25,7 @@ const routes: Routes=[
     { path: 'provider/:id', component: ProviderComponent},
     { path: 'provider', component: ProviderComponent},
     { path: 'register', component: RegisterComponent},
+    { path: 'reserve/:provider/:product', component: ReserveComponent },
     { path: 'reserve', component: ReserveComponent },
     { path: 'reserved', component: ReservedComponent},
     { path: 'listProvider', component: ListProviderComponent },

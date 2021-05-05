@@ -2,18 +2,18 @@
     <div class="col-md-12">
         <nav class="nav shadow-p p-2 mb-2 white cyan lighten-2">
             <h5 class="roboto white-text">
-                Oxigeno Perú S.A.C.
+                {{provider.name}}
             </h5>
         </nav>
     </div>
     <div class="col-md-12">
         <div class="row">
             <div class="col-12">
-                <h5 class="roboto">Balón de Oxigeno 10m3</h5>
+                <h5 class="roboto">{{product.name}}</h5>
                 <br>
             </div>
             <div class="col-4"  style="text-align: center;">
-                <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg);mix-blend-mode: darken;" src="/assets/img/cuadro.png" alt="">
+                <img class="placeholder-image" style="background-image:url({{product.image}});mix-blend-mode: darken;" src="/assets/img/cuadro.png" alt="">
             </div>
             <div class="col-4">
                 <table class="roboto" style="width: 100%;font-size: 80%;">
@@ -31,7 +31,7 @@
                                     >
                                 </form>
                             </td>
-                            <td class="text-right">S/. {{pedidoForm.value.precio}}</td>
+                            <td class="text-right">S/. {{product.price}}</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td class="text-right roboto"  style="font-weight: 600;font-size:200%;">S/. {{multiply(pedidoForm.value.precio,pedidoForm.value.cantidad) }}</td>
+                            <td class="text-right roboto"  style="font-weight: 600;font-size:200%;">S/. {{multiply(product.price,pedidoForm.value.cantidad) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,54 +54,31 @@
         <br><br><br>
         <h6 class="roboto">Otros Productos</h6>
     </div>
-    <div class="col-md-4" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
+    <div class="col-md-4" *ngFor="let item of products; index as i;">
         <div class="card mb-2 shadow-p" style="width: 100%;">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-12">
-                        <h6 class="roboto">Balón de Oxigeno 10m3</h6>
-                    </div>
                     <div class="col-3">
-                        <img class="placeholder-image" style="background-image:url(https://saludconlupa.com/media/images/oxigeno-medicinal.width-465.jpg)" src="/assets/img/cuadro.png" alt="">
+                        <img class="placeholder-image" style="background-image:url({{item.image}})" src="/assets/img/cuadro.png" alt="">
                     </div>
                     <div class="col-9">
-                        <table class="roboto" style="width: 100%;font-size: 80%;">
-                            <tbody>
-                                <tr>
-                                    <th>Cantidad:</th>
-                                    <th>Precio Unitario:</th>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">
-                                        <form>
-                                            <input min="0" style="max-width: 60px;" 
-                                                type="number" class="form-group"
-                                                value="1"
-                                            >
-                                        </form>
-                                    </td>
-                                    <td class="text-right">S/. 2500.00</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th>Precio Total</th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="text-right">S/. 2500</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!--<pre>
-                            {{pedido | json}}
-                        </pre>-->
+                        <ul class="list-provider">
+                            <li><strong>{{item.name}}</strong></li>
+                            <li><strong>Precio</strong> S/. {{item.price}}</li>
+                            <li>
+                                <br>
+                            </li>
+                            <button (click)="reserve(item)" type="button" class="btn btn-light shadow-p font-weight-normal roboto">Reservar</button>
+                        </ul>
                     </div>
-                    <div class="col-12 text-center">
-                        <button routerLink="/reserved" type="button" class="btn btn-light shadow-p font-weight-normal roboto">Reservar</button>
-                    </div>
-                    
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-md-12" *ngIf="products.length < 1">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>info!</strong> El proveedor {{provider.name}} no tiene más productos para mostrar.
+            
         </div>
     </div>
 </div>

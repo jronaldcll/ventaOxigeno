@@ -13,3 +13,22 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
+.banner{
+    background-image: url(/assets/img/tank.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+}
+.list-provider{
+    list-style: none;
+}
+.list-provider mat-icon{
+    vertical-align: bottom;
+}
+
+.shadow-p2:hover{
+    box-shadow: 0px 6px 6px hsl(0deg 0% 30% / 15%);
+}
