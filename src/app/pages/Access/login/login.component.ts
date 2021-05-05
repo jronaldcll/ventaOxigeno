@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +12,54 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
     datosForm = this.fb.group({
-        correo: ['',[Validators.required, Validators.email]],
-        password: ['',[Validators.required]]
+        loginUsuario: ['',[Validators.required, Validators.email]],
+        passwordUsuario: ['',[Validators.required]]
     });
 
-    constructor(private fb: FormBuilder, private r: Router) { }
+    constructor(private fb: FormBuilder, private readonly userService : UserService, private router: Router) { }
 
-    onLogin(event){
-        event.preventDefault();
+    login(datauser){
+        //datauser.preventDefault();
+        //console.log("here");
+        this.userService.login(datauser).subscribe((rest : any)=>{
+            if(rest.isSuccess){
+                sessionStorage.setItem('token', rest.data.token);
+                this.setData(this.datosForm.value.correo);
+                this.router.navigate(['provider']);
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Error de conexión!',
+                    footer: '<a href>Validar información</a>'
+                  })
+
+                  this.onClean();
+            }
+        })
+        // event.preventDefault();
+        // if(this.datosForm.valid){
+        //     //this.r.navigate(['/provider']);
+        //     this.setData(this.datosForm.value.correo);
+        //     console.log(this.datosForm.value);
+        // } else {
+        //     alert('Correo no valido o datos incompletos');
+        // }
+    }
+
+    onSubmit(){
         if(this.datosForm.valid){
-            //this.r.navigate(['/provider']);
-            this.setData(this.datosForm.value.correo);
-            console.log(this.datosForm.value);
-        } else {
-            alert('Correo no valido o datos incompletos');
-        }
+            this.login(this.datosForm.value);
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Datos invalidos!',
+            footer: '<a href>Validar información</a>'
+          })
+
+          this.onClean();
+    }
     }
 
     setData(user){
@@ -34,6 +69,10 @@ export class LoginComponent implements OnInit {
 		a.target = "_SELF";
 		a.click();
     }
+
+    onClean(){
+        this.datosForm.reset();
+      }
 
     ngOnInit(): void {
     }
