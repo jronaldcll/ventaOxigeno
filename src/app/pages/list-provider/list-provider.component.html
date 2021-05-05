@@ -1,79 +1,79 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 p-4 text-left">    
-            <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle roboto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Distrito
-                </a>          
-                <div class="dropdown-menu roboto" aria-labelledby="dropdownMenuLink" style="height: auto; max-height: 200px; overflow-x: hidden;">
-                     <a class="dropdown-item roboto" href="#">Ancón</a>
-                     <a class="dropdown-item roboto" href="#">Ate</a>
-                     <a class="dropdown-item roboto" href="#">Barranco</a>
-                     <a class="dropdown-item roboto" href="#">Breña</a>
-                     <a class="dropdown-item roboto" href="#">Carabayllo</a>
-                     <a class="dropdown-item roboto" href="#">Chaclacayo</a>
-                     <a class="dropdown-item roboto" href="#">Chorrillos</a>
-                     <a class="dropdown-item roboto" href="#">Cieneguilla</a>
-                     <a class="dropdown-item roboto" href="#">Comas</a>
-                     <a class="dropdown-item roboto" href="#">El agustino</a>
-                     <a class="dropdown-item roboto" href="#">Independencia</a>
-                     <a class="dropdown-item roboto" href="#">Jesús maría</a>
-                     <a class="dropdown-item roboto" href="#">La molina</a>
-                     <a class="dropdown-item roboto" href="#">La victoria</a>
-                     <a class="dropdown-item roboto" href="#">Lima</a>
-                     <a class="dropdown-item roboto" href="#">Lince</a>
-                     <a class="dropdown-item roboto" href="#">Los olivos</a>
-                     <a class="dropdown-item roboto" href="#">Chosica</a>
-                     <a class="dropdown-item roboto" href="#">Lurín</a>
-                     <a class="dropdown-item roboto" href="#">Magdalena del mar</a>
-                     <a class="dropdown-item roboto" href="#">Miraflores</a>
-                     <a class="dropdown-item roboto" href="#">Pachacámac</a>
-                     <a class="dropdown-item roboto" href="#">Pucusana</a>
-                     <a class="dropdown-item roboto" href="#">Pueblo libre</a>
-                     <a class="dropdown-item roboto" href="#">Puente piedra</a>
-                     <a class="dropdown-item roboto" href="#">Punta hermosa</a>
-                     <a class="dropdown-item roboto" href="#">Punta negra</a>
-                     <a class="dropdown-item roboto" href="#">Rímac</a>
-                     <a class="dropdown-item roboto" href="#">San bartolo</a>
-                     <a class="dropdown-item roboto" href="#">San borja</a>
-                     <a class="dropdown-item roboto" href="#">San isidro</a>
-                     <a class="dropdown-item roboto" href="#">San Juan de Lurigancho</a>
-                     <a class="dropdown-item roboto" href="#">San Juan de Miraflores</a>
-                     <a class="dropdown-item roboto" href="#">San Luis</a>
-                     <a class="dropdown-item roboto" href="#">San Martin de Porres</a>
-                     <a class="dropdown-item roboto" href="#">San Miguel</a>
-                     <a class="dropdown-item roboto" href="#">Santa Anita</a>
-                     <a class="dropdown-item roboto" href="#">Santa María del Mar</a>
-                     <a class="dropdown-item roboto" href="#">Santa Rosa</a>
-                     <a class="dropdown-item roboto" href="#">Santiago de Surco</a>
-                     <a class="dropdown-item roboto" href="#">Surquillo</a>
-                     <a class="dropdown-item roboto" href="#">Villa el Salvador</a>
-                     <a class="dropdown-item roboto" href="#">Villa Maria del Triunfo</a>                
-                </div>
-            </div>
+        <div class="col-lg-3 p-4 text-left" >    
+            <select id="inputState" class="form-control" (change)="onChange($event.target.value)">
+                <option selected>Seleccione Distrito</option>
+                  <option>Ancón</option>
+                  <option>Ate</option>
+                  <option>Barranco</option>
+                  <option>Breña</option>
+                  <option>Carabayllo</option>
+                  <option>Chaclacayo</option>
+                  <option>Chorrillos</option>
+                  <option>Cieneguilla</option>
+                  <option>Comas</option>
+                  <option>El Agustino</option>
+                  <option>Independencia</option>
+                  <option>Jesús María</option>
+                  <option>La Molina</option>
+                  <option>La Victoria</option>
+                  <option>Lima</option>
+                  <option>Lince</option>
+                  <option>Los Olivos</option>
+                  <option>Chosica</option>
+                  <option>Lurín</option>
+                  <option>Magdalena del Mar</option>
+                  <option>Miraflores</option>
+                  <option>Pachacámac</option>
+                  <option>Pucusana</option>
+                  <option>Pueblo Libre</option>
+                  <option>Puente Piedra</option>
+                  <option>Punta Hermosa</option>
+                  <option>Punta Negra</option>
+                  <option>Rímac</option>
+                  <option>San Bartolo</option>
+                  <option>San Borja</option>
+                  <option>San Isidro</option>
+                  <option>San Juan de Lurigancho</option>
+                  <option>San Juan de Miraflores</option>
+                  <option>San Luis</option>
+                  <option>San Martin de Porres</option>
+                  <option>San Miguel</option>
+                  <option>Santa Anita</option>
+                  <option>Santa María del Mar</option>
+                  <option>Santa Rosa</option>
+                  <option>Santiago de Surco</option>
+                  <option>Surquillo</option>
+                  <option>Villa el Salvador</option>
+                  <option>Villa Maria del Triunfo</option>
+              </select>            
         </div>
     </div>
     <div class="row roboto">             
-        <div class="col-lg-6" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;" >
+        <div class="col-lg-6" *ngFor="let p of providers" >
             <div class="card mb-2 shadow-p" style="width: 100%;" [routerLink]="['/provider']">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-3  text-center">
                             <img src="/assets/img/cuadro.png" class="img-thumbnail img-placeholder shadow-p"
-                                style="background-image: url(/assets/img/emp{{item}}.jpg);"
-                            >
+                                style="background-image: url({{p.image}});">
                             <br><br>
                         </div>                       
                             <div class="col-sm-9" >
-                                <h5 class="card-title">Empresa Salvame</h5>
-                                <p class="card-text">Abierto</p>
-                                <p class="card-text">3 km. Disponible <i class="fa fa-dot-circle-o green-text" aria-hidden="true"></i>
-                                    <!--<img src="/assets/img/large-green-circle.png" style="height: 20px; width: 20px;">-->
-                                </p>                                                                                              
+                                <h5 class="card-title">{{p.name}}</h5>
+                                <p class="card-text">Dirección: {{p.address}}, {{p.district}}</p>
+                                <p class="card-text">RUC: {{p.ruc}}</p>
+                                <p class="card-text">{{p.email}} </p>                    
+                                                                                                                              
                                 <div class="card-img-overlay text-right ">
-                                    <img src="/assets/img/emp{{item}}.jpg"  class="img-thumbnail" style="height: 40px; width: 40px;" >                                   
-                                    <br><br>
-                                    <p class="card-text">S/ 18.00</p>                    
+                                    <img src="{{p.image}}"  class="img-thumbnail" style="height: 40px; width: 40px;" >                                   
+                                    <br><br>                                    
+                                    <p class="card-text">Disponible 
+                                        <i *ngIf="p.openOrClosed == true" class="fa fa-dot-circle-o green-text" aria-hidden="true"></i> 
+                                        <i *ngIf="p.openOrClosed != true" class="fa fa-dot-circle-o red-text" aria-hidden="true"></i>                                        
+                                    </p>    
+                                    <p>{{p.distance}} Km</p>
+                                    
                                 </div>     
                         </div>                    
                     </div>

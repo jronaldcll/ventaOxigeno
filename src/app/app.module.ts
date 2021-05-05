@@ -22,6 +22,7 @@ import { EditProviderComponent } from './pages/edit-provider/edit-provider.compo
 import { DataTablesModule } from 'angular-datatables';
 import { LandingComponent } from './pages/landing/landing.component';
 import { TosComponent } from './pages/tos/tos.component'
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TosComponent } from './pages/tos/tos.component'
     AppRoutingModule,
     ReactiveFormsModule,
     DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

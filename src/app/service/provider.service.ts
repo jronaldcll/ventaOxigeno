@@ -13,5 +13,9 @@ export class ProviderService {
     searchById(id) {
         return this.http.post<any>('https://localhost:44309/api/Provider/searchById?id='+id, null);
     }
+
+    getProvidersByDistrict(distrito){      
+      return this.http.get('https://localhost:44309/api/Provider/getProvidersByDistrict?distrito=' + distrito);
+    }
 }
 
