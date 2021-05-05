@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './pages/Access/login/login.component';
 import { ProviderComponent } from './pages/provider/provider.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { RegisterComponent } from './pages/Access/register/register.component';
 import { ReserveComponent } from './pages/reserve/reserve.component';
 import { ReservedComponent } from './pages/reserved/reserved.component';
 

@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './pages/Access/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProviderComponent } from './pages/provider/provider.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { RegisterComponent } from './pages/Access/register/register.component';
 import { ReserveComponent } from './pages/reserve/reserve.component';
 
 import { ListProviderComponent } from './pages/list-provider/list-provider.component';
