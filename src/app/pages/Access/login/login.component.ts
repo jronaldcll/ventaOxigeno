@@ -19,8 +19,6 @@ export class LoginComponent implements OnInit {
     constructor(private fb: FormBuilder, private readonly userService : UserService, private router: Router) { }
 
     login(datauser){
-        //datauser.preventDefault();
-        //console.log("here");
         this.userService.login(datauser).subscribe((rest : any)=>{
             if(rest.isSuccess){
                 sessionStorage.setItem('token', rest.data.token);
@@ -37,14 +35,6 @@ export class LoginComponent implements OnInit {
                   this.onClean();
             }
         })
-        // event.preventDefault();
-        // if(this.datosForm.valid){
-        //     //this.r.navigate(['/provider']);
-        //     this.setData(this.datosForm.value.correo);
-        //     console.log(this.datosForm.value);
-        // } else {
-        //     alert('Correo no valido o datos incompletos');
-        // }
     }
 
     onSubmit(){
