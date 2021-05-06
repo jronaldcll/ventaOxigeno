@@ -8,16 +8,26 @@
     </div>
     <div class="col-md-12">
     </div>
-    <div class="col-md-4" *ngFor="let item of [1,2,3,4,5,6,7]; index as i;">
+    <div class="col-md-4" *ngFor="let item of reserves; index as i;">
         <div class="card mb-2 shadow-p" style="width: 100%;">
             <div class="card-body roboto">
-                <p><strong>Empresa:</strong> OXIGENO PERÚ SAC</p>
-                <p><strong>Estado :</strong> Recogido</p>
-                <p><strong>Precio :</strong> S/. 8500.00</p>
+                <p><strong>Producto:</strong> {{item.name}}</p>
+                <p><strong>Estado :</strong> {{item.stateReserve ? 'Entregado' : 'Pendiente'}}</p>
+                <p><strong>Precio :</strong> S/. {{item.price * item.quantity}}</p>
                 <!--<p class="center-text">
                     <a href="" class="btn btn-light roboto">Ver detalle</a>
                 </p>-->
                 
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div *ngIf="reserves.length < 1">
+            <div routerLink="/listProvider" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Uppss!</strong> Aun no tienes reservas para mostrar.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         </div>
     </div>

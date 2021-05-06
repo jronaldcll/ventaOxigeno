@@ -11,4 +11,18 @@ export class ReserveService {
   getReservesByProvider(id){
     return this.http.get('https://localhost:44309/api/Project/getReservesByProvider?idProvider=' + id);
   }
+
+  getReservesByUser(id,token){
+    const header = { Authorization: 'Bearer ' + token }
+    return this.http.get('https://localhost:44309/api/Project/getReservesByUser?id=' + id,{
+      headers: header
+    });
+  }
+
+  createReserve(reserve,token){
+    const header = { Authorization: 'Bearer ' + token }
+    return this.http.post('https://localhost:44309/api/Project/createReserve',reserve,{
+      headers: header
+    });
+  }
 }

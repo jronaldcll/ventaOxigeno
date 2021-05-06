@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { ProviderService } from 'src/app/service/provider.service';
+import { ReserveService } from 'src/app/service/reserve.service';
 
 @Component({
   selector: 'app-reserve',
@@ -51,7 +52,8 @@ export class ReserveComponent implements OnInit {
                 private r:Router,
                 private activeRoute: ActivatedRoute,
                 private serviceProvider: ProviderService,
-                private serviceProduct: ProductService ) { }
+                private serviceProduct: ProductService,
+                private serviceReserve: ReserveService ) { }
 
     multiply(a,b){
         return parseFloat(a)*parseFloat(b);
@@ -89,6 +91,25 @@ export class ReserveComponent implements OnInit {
                 
             } 
         });
+    }
+
+    crearReserva(){
+        let token = sessionStorage.getItem('token');
+        let user = JSON.parse(sessionStorage.getItem('user'));
+        if(token){
+            this.serviceReserve.createReserve({
+                quantity: this.pedidoForm.value.cantidad + '',
+                price: this.product.price + '',
+                userId: user.idUser,
+                productId: this.product.id
+            },token).subscribe((rest: any) =>{
+                if(rest.isSuccess){
+                    this.r.navigate(['/reserved/'+user.idUser]);                    
+                } else {
+                    console.log('Ocurrio un error');
+                }
+            });
+        }
     }
 
 

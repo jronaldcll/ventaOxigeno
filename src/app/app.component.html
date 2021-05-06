@@ -12,19 +12,19 @@
                 <li class="nav-item" role="presentation">
                 <a class="nav-link active js-scroll-trigger" routerLink="/" style="color: rgb(255, 255, 255);">Inicio</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="listProvider" style="color: rgb(255, 255, 255);">Productos</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="reserved" style="color: rgb(255, 255, 255);">Ver Reservas</a></li>
+                <li *ngIf="user.idUser > 0" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" (click)="verMisReservas()" style="color: rgb(255, 255, 255);cursor: pointer;">Ver Reservas</a></li>
                 <!--<li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="login" style="color: rgb(255, 255, 255);">Iniciar Sesion</a></li>-->
                 <!--<li class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="register" style="color: rgb(255, 255, 255);">Crear Cuenta</a></li>-->
-                <li *ngIf="isAdmin()" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="homeprovider" style="color: rgb(255, 255, 255);">Proveedores</a></li>
-                <li *ngIf="isProvider()" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="listReserve" style="color: rgb(255, 255, 255);">Pedidos</a></li>          
+                <li *ngIf="user.role == 'ADMIN'" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="homeprovider" style="color: rgb(255, 255, 255);">Proveedores</a></li>
+                <li *ngIf="user.role == 'PROVIDER'" class="nav-item" role="presentation"><a class="nav-link active js-scroll-trigger" routerLink="listReserve" style="color: rgb(255, 255, 255);">Pedidos</a></li>          
             </ul>
           </div>
         </div>
         <div class="d-flex align-items-start">        
           <a class="navbar-brand js-scroll-trigger black-text" routerLink="home">OXI OK</a>      
-          <a *ngIf="!isOnline()" class="navbar-brand js-scroll-trigger roboto" routerLink="/login" style="color: rgb(255, 255, 255);"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Ingresar</a> 
-          <a *ngIf="!isOnline()" class="navbar-brand js-scroll-trigger roboto" routerLink="/register" style="color: rgb(255, 255, 255);"><i class="fa fa-sign-in" aria-hidden="true"></i> Registrarse</a>  
-          <a *ngIf="isOnline()" (click)="logout()" class="navbar-brand js-scroll-trigger" routerLink="/login"  style="color: rgb(255, 255, 255);">SALIR</a>      
+          <a *ngIf="user.idUser == 0" class="navbar-brand js-scroll-trigger roboto" routerLink="/login" style="color: rgb(255, 255, 255);"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Ingresar</a> 
+          <a *ngIf="user.idUser == 0" class="navbar-brand js-scroll-trigger roboto" routerLink="/register" style="color: rgb(255, 255, 255);"><i class="fa fa-sign-in" aria-hidden="true"></i> Registrarse</a>  
+          <a *ngIf="user.idUser > 0" (click)="logout()" class="navbar-brand js-scroll-trigger" routerLink="/login"  style="color: rgb(255, 255, 255);">SALIR</a>      
                       
           <!-- <i class="fa fa-shopping-cart pl-2 pt-2" aria-hidden="true"></i> -->
           <!-- <li class="nav-item"><i class="nav-link fa-address-book pl-3 pt-2" aria-hidden="true" routerlink="/login" ></i></li> -->

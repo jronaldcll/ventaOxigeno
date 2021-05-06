@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
         this.userService.login(datauser).subscribe((rest : any)=>{
             if(rest.isSuccess){
                 sessionStorage.setItem('token', rest.data.token);
-                this.setData(this.datosForm.value.correo);
+                //this.setData(this.datosForm.value.correo);
+                this.setData(rest.data);
                 this.router.navigate(['provider']);
             }else{
                 Swal.fire({
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
     }
 
     setData(user){
-        sessionStorage.setItem('user',user);
+        sessionStorage.setItem('user', JSON.stringify(user));
         let a = document.createElement("a");
 		a.href = "/listProvider";
 		a.target = "_SELF";

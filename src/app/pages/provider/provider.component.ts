@@ -21,7 +21,8 @@ export class ProviderComponent implements OnInit {
         image: '',
         hourStart: '',
         hourEnd: '',
-        email: ''
+        email: '',
+        ruc: ''
     }
 
     products = [];
