@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProviderService } from 'src/app/service/provider.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ListProviderComponent implements OnInit {
 
   providers = [];
 
-  constructor(private readonly providerService: ProviderService) { }
+  constructor(private readonly providerService: ProviderService, private r: Router) { }
 
   getProvidersByDistrict(distrito: string){    
     this.providerService.getProvidersByDistrict(distrito).subscribe((rest: any) => {      
@@ -39,6 +40,13 @@ export class ListProviderComponent implements OnInit {
   }
   onChange(distrito:any): void{
     this.getProvidersByDistrict(distrito);
+  }
+
+  go(item){
+    console.log(item.openOrClosed);
+    if(item.openOrClosed == 'True'){
+      this.r.navigate(['/provider/'+item.id]);
+    }
   }
 
 }
