@@ -69,8 +69,8 @@
                                     <img src="{{p.image}}"  class="img-thumbnail" style="height: 40px; width: 40px;" >                                   
                                     <br><br>                                    
                                     <p class="card-text">Disponible 
-                                        <i *ngIf="p.openOrClosed == true" class="fa fa-dot-circle-o green-text" aria-hidden="true"></i> 
-                                        <i *ngIf="p.openOrClosed != true" class="fa fa-dot-circle-o red-text" aria-hidden="true"></i>                                        
+                                        <i *ngIf="p.openOrClosed == 'True'" class="fa fa-dot-circle-o green-text" aria-hidden="true"></i> 
+                                        <i *ngIf="p.openOrClosed != 'True'" class="fa fa-dot-circle-o red-text" aria-hidden="true"></i>                                       
                                     </p>    
                                     <p>{{p.distance}} Km</p>
                                     

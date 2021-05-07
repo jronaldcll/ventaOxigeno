@@ -17,5 +17,20 @@ export class ProviderService {
     getProvidersByDistrict(distrito){      
       return this.http.get('https://localhost:44309/api/Provider/getProvidersByDistrict?distrito=' + distrito);
     }
+
+        
+    getSearchAllProvider(){      
+      return this.http.get('https://localhost:44309/api/Provider/getSearchAllProvider');
+    }
+
+    getInsertNewProvider(data){      
+      return this.http.post('https://localhost:44309/api/Provider/getInsertNewProvider',data);
+    }
+
+    postUpdateProvider(data){      
+      return this.http.post('https://localhost:44309/api/Provider/postUpdateProvider',data);
+    }
+
+
 }
 

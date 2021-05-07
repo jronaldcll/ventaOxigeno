@@ -33,6 +33,7 @@ const routes: Routes=[
     { path: 'listReserve', component: ListReserveComponent },
     { path: 'homeprovider', component: HomeProviderComponent },
     { path: 'editprovider', component: EditProviderComponent },
+    { path: 'editprovider/:id', component: EditProviderComponent },
     { path: 'registerprovider', component: RegisterProviderComponent },
     { path: '', component: LandingComponent},
     { path: 'tos', component: TosComponent}
