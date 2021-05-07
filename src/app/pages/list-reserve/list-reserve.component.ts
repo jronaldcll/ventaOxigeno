@@ -24,14 +24,15 @@ export class ListReserveComponent implements OnInit {
         
     let token = sessionStorage.getItem('token');
     let userString = sessionStorage.getItem('user');
+    console.log(sessionStorage.getItem('user'));
     let user = {
-        idUser: 0
+      loginUsuario: ''
     };
     if(userString){
       user = JSON.parse(userString);
     }
 
-    this.reserveService.getReservesByProvider(user.idUser,token).subscribe((rest: any) => {      
+    this.reserveService.getReservesByProvider(user.loginUsuario,token).subscribe((rest: any) => {      
         if(rest.isSuccess){
           this.reserves = rest.data;          
           this.dtTrigger.next();

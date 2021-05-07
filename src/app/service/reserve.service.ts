@@ -8,9 +8,9 @@ export class ReserveService {
 
   constructor(private readonly http: HttpClient) {}
     
-  getReservesByProvider(id,token){
+  getReservesByProvider(providerEmail,token){
     const header = { Authorization: 'Bearer ' + token }
-    return this.http.get('https://localhost:44309/api/Project/getReservesByProvider?idProvider=' + id,{ headers: header });
+    return this.http.get('https://localhost:44309/api/Project/getReservesByProvider?ProviderEmail=' + providerEmail,{ headers: header });
   }
 
   getReservesByUser(id,token){
