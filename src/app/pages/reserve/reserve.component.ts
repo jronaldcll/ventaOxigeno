@@ -56,7 +56,7 @@ export class ReserveComponent implements OnInit {
                 private serviceReserve: ReserveService ) { }
 
     multiply(a,b){
-        return parseFloat(a)*parseFloat(b);
+        return parseFloat((parseFloat(a)*parseFloat(b))+'').toFixed(2);
     }
 
     ngOnInit(): void {

@@ -23,6 +23,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { LandingComponent } from './pages/landing/landing.component';
 import { TosComponent } from './pages/tos/tos.component'
 import { GoogleMapsModule } from '@angular/google-maps';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { ContactusComponent } from './pages/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
     RegisterProviderComponent,
     EditProviderComponent,
     LandingComponent,
-    TosComponent
+    TosComponent,
+    AboutusComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

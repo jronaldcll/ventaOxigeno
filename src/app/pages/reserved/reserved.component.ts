@@ -43,4 +43,22 @@ export class ReservedComponent implements OnInit {
         });
     }
 
+
+    getStatus(id){
+        switch (id) {
+            case 0:
+                return 'Pendiente';    
+            break;
+            case 1:
+                return 'Aprobado';    
+            break;
+            case 2:
+                return 'Rechazado';    
+            break;
+            default:
+                return 'Indeterminado'; 
+            break;
+        }
+    }
+
 }

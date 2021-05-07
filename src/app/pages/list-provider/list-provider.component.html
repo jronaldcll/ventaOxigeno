@@ -61,7 +61,12 @@
                         </div>                       
                             <div class="col-sm-9" >
                                 <h5 class="card-title">{{p.name}}</h5>
-                                <p class="card-text">Dirección: {{p.address}}, {{p.district}}</p>
+                                <p class="card-text" 
+                                    style="max-width: 100%;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;"
+                                >Dirección: {{p.address}}, {{p.district}}</p>
                                 <p class="card-text">RUC: {{p.ruc}}</p>
                                 <p class="card-text">{{p.email}} </p>                    
                                                                                                                               

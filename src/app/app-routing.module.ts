@@ -15,6 +15,8 @@ import { EditProviderComponent } from './pages/edit-provider/edit-provider.compo
 import { RegisterProviderComponent } from './pages/register-provider/register-provider.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { TosComponent } from './pages/tos/tos.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { ContactusComponent } from './pages/contactus/contactus.component';
 
 
 const routes: Routes=[
@@ -36,7 +38,9 @@ const routes: Routes=[
     { path: 'editprovider/:id', component: EditProviderComponent },
     { path: 'registerprovider', component: RegisterProviderComponent },
     { path: '', component: LandingComponent},
-    { path: 'tos', component: TosComponent}
+    { path: 'tos', component: TosComponent},
+    { path: 'aboutus', component: AboutusComponent},
+    { path: 'contactus', component: ContactusComponent}
 ];
 
 
