@@ -23,8 +23,7 @@ export class ListReserveComponent implements OnInit {
   getReservesByProvider(){
         
     let token = sessionStorage.getItem('token');
-    let userString = sessionStorage.getItem('user');
-    console.log(sessionStorage.getItem('user'));
+    let userString = sessionStorage.getItem('user');  
     let user = {
       loginUsuario: ''
     };
@@ -43,8 +42,8 @@ export class ListReserveComponent implements OnInit {
       
       this.dtOptions = {
         pagingType: 'full_numbers',
-        pageLength: 4,
-        
+        pageLength: 10,
+        order: [4,'asc'],        
         language: {
           url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json'
         }
